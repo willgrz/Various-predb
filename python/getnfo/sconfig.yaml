@@ -1,0 +1,60 @@
+echo-net:
+    ipaddress: some.network.com
+    port: 7000
+    username: 
+    password: 
+    nickserv_password:
+    channels: 
+        "#add":
+            channel_key:
+    use_ssl: 1
+    debug_channel:
+    site_script: foo
+    nfodir: foo
+    sitebot: foo
+    section_map:
+        'foo' : 'bar'
+    triggers:
+        NEW:
+            foo: 0
+ 
+ 
+networks:
+    sitename:
+        ipaddress: somesite
+        port: 8000
+        username: 
+        password: 
+        nickserv_password:
+        debug_channel:
+        use_ssl: 1
+        sitebot: SITE-BOT
+        nfodir: /home/znc/db/nfo/
+        site_script: /home/znc/getnfo/get/sitename.sh
+        triggers:
+            NEW:
+                key_index: 0
+                sect_index: 2
+                rls_index: 4
+            PRE:
+                key_index: 0
+                sect_index: 2
+                rls_index: 7
+        channels:
+            "#site":
+                channel_key:
+            "#site-spam":
+                channel_key:
+        section_map:
+            '0DAY:': /0DAY-today/
+            'MP3:': /MP3-today/
+            'PS3:': /PS3/
+            'PSP:': /PSP/
+            'TV-DVDR:': /TV-DVDR/
+            'TV-X264:': /TV-X264/
+            'TV-XVID:': /TV-XViD/
+            'WII:': /Wii/
+            'X264:': /X264/
+            'XBOX360:': /XBOX360/
+            'XVID:': /XViD/
+            'XXX:': /XXX/

@@ -1,0 +1,5 @@
+#this scripts basically give you  an entire predb setup - from adding, to relay, to search, to webinterface
+#copyright for some scripts is unclear as source is unknown
+#please don't ask me how to use it or how to get sources for it, you'll have to find out yourself.
+#php scripts in inc are required for some of the bash shell scripts, path in them is now wrong, so fix that
+#i will also not give you a copy of my DB or NFOs/SFVs.

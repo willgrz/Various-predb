@@ -1,0 +1,2 @@
+#count script for NFO/SFV dir with possibly millions of files in a single dir, ls is extremely slow with that
+#compile with “g++ count.cpp -o count && mv count /usr/sbin” 

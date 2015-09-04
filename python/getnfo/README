@@ -1,0 +1,41 @@
+###copied from old wiki###
+ This is the site get nfo script - config is not easy, but it works.
+
+Every site also needs a siteget (DRFTPD Version / GLFTPD Version) Bash file, placed in the /get subfolder.
+
+Config file:
+
+echo-net is the target net, where !sitenfo commands will be sent.
+
+Infos:
+
+echo-net:
+
+    *username & password are for ZNC BNC, others untested.
+    *nickserv password can be set, but better let ZNC handle it.
+    *channel must be NORMAL, not partyline.
+    *channel can have key, if it does not have one leave it empty.
+    *site_script, nfodir, sitebot, section_map and triggers need to contain dummy components, as shown below.
+
+networks:
+
+    *”sitename:” will be the sitename used in the DB for the NFOFROM, just all uppercase - cannot contain spaces, dashes or similar, only aA-zZ and 0-9.
+    *”sitebot” is the announcing bot's nickname, MUST FIT EXACTLY (capitalization) - can contain “^” ”-” and other irc safe characters (no ”@” and similar, like ”?”)
+    *”nfodir” is the dir where the check will look if the nfo already exists.
+    *”sitescript” is the bash get file, see top of this site for links, must be full path to the script.
+    *”triggers” - this is important, in this form the bot is confed for this layout:
+    “NEW in TV-XViD: → Bizarre.Foods.S06E08.Greece.HDTV.XviD-MOMENTUM by ABC/DEF”
+    key_index is “NEW”, sect_index (the section) is 2, rls_index (the release name) is 4.
+    Easy to understand.
+    The PRE trigger is the same, for site pres -configuration in this file is for:
+    “PRE in XViD: → GROUP gives us Release.123-GROUP 33.4MB in 3 F”
+    PRE is 0, Section is 2, Release is 7.
+    *”channels” nothing hard to understand here, key must be empty if none is set.
+    *”section_map” is a bit complicated, it is used to map the sections in the IRC to the actual FTP dirs.
+    ALL sections need to be UPPERCASE ONLY, regardless of irc announcement, as example:
+    “PRE in XViD […]”
+    Section must be set as XVID, not XViD.
+    The dir on the FTP must start with/, and end with / and be named like on the FTP itself, so /XViD/ as example.
+
+To add more networks, just paste them below the first - starting with the sitename, do not use “networks:” more than once.
+#######

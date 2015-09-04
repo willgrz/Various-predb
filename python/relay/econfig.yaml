@@ -1,0 +1,39 @@
+networks:
+    Rizon:
+        ipaddress: irc.rizon.net
+        port: 7000
+        username : 
+        password: 
+        use_ssl: 1
+        accept_bots: empty
+        template: 1
+        no_read: 1
+        channels:
+            "#ultrapre":
+                announce:
+                    - addpre
+                    - info
+                    - gn                    
+                    - nuke
+                    - unnuke
+                    - modnuke
+                    - delpre
+                    - undelpre
+            "#pre":
+                announce:
+                    - addpre
+                    - nuke
+                    - unnuke
+                    - modnuke
+ 
+ 
+    Source:
+        ipaddress: bnc.org
+        port: 1111
+        username: abc
+        password: efg
+        use_ssl: 1
+        accept_bots: prebot
+        template: 0
+        channels:
+            "~#pre":
